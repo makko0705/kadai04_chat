@@ -35,8 +35,8 @@ $("#send").on("click",function(){
              uname : $("#uname").val(),
              text : $("#text").val(),
              color : $("#color").val(),
-            day :imanohinichi,
-            time : imanojikan
+             day :imanohinichi,
+             time : imanojikan
         }
         const newPostRef = push(dbRef);//ユニークキーを生成
         set(newPostRef,msg);
@@ -48,7 +48,6 @@ $("#send").on("click",function(){
         const msg = data.val();
         const key = data.key;//ユニークKEY 削除更新に必須
         const myname = $("#uname").val();
-        console.log("わたしのなまえは"+myname+"です");
 
         let h = '<div id="'+key+'" class="'+msg.uname+' chat_item">';
             h += '<p class="name name_'+msg.uname+'">'+msg.uname+'</p>';
@@ -72,7 +71,6 @@ $("#send").on("click",function(){
         }
         //常にに一番下の吹き出しを表示させる
             $("#output").animate({ scrollTop: $('#output').prop("scrollHeight")}, 1000);
-            //$('#output').scrollTop($('#output')[0].scrollHeight);
     });
 
     //削除イベント
